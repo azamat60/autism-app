@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../screens/HomeScreen';
+import { ColorDropScreen } from '../screens/ColorDropScreen';
 import { MatchColorsScreen } from '../screens/MatchColorsScreen';
 import { SortShapesScreen } from '../screens/SortShapesScreen';
 import { FindEmotionScreen } from '../screens/FindEmotionScreen';
@@ -33,6 +34,11 @@ export function RootNavigator() {
         component={HomeScreen}
         name="Home"
         options={{ title: 'Choose an Activity' }}
+      />
+      <Stack.Screen
+        component={ColorDropScreen}
+        name="ColorDrop"
+        options={{ title: 'Color Drop' }}
       />
       <Stack.Screen
         component={MatchColorsScreen}

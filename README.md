@@ -108,3 +108,43 @@ npm run format:check
 
 - This is an MVP prototype for product validation and UX testing.
 - No backend, auth, or remote storage is included.
+
+## Color Drop (Drag and Drop)
+
+Feature files:
+
+```text
+src/features/colorDrop/
+  ColorDropScreen.tsx
+  components/
+    Basket.tsx
+    DraggableItem.tsx
+  assets.ts
+  types.ts
+```
+
+Asset location used by this feature:
+
+- `assets/images`
+
+The asset registry is in:
+
+- `src/features/colorDrop/assets.ts`
+
+How mapping works:
+
+- `colorKey` is inferred from filename tokens: `red`, `blue`, `yellow`
+- files containing `basket` are treated as basket images
+- all other recognized files are treated as draggable items
+- unrecognized filenames are skipped with a clear dev warning
+
+If auto-detection fails, edit `rawAssets` in `src/features/colorDrop/assets.ts`:
+
+- each entry is `{ id, fileName, source: require(...) }`
+- game logic uses only `colorKey` and role, not hardcoded filenames
+
+Navigation wiring:
+
+- route name: `ColorDrop`
+- stack screen: `src/navigation/RootNavigator.tsx`
+- Home activity card now links to `ColorDrop`

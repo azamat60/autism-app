@@ -16,6 +16,12 @@ type HomeScreenProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const activities = [
   {
+    key: 'ColorDrop' as const,
+    title: 'Color Drop',
+    subtitle: 'Drag items into baskets',
+    icon: <ColorsIcon />,
+  },
+  {
     key: 'MatchColors' as const,
     title: 'Match the Colors',
     subtitle: 'Move colors to matching spots',
