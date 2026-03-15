@@ -33,7 +33,7 @@ export function RootNavigator() {
       <Stack.Screen
         component={HomeScreen}
         name="Home"
-        options={{ title: 'Choose an Activity' }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         component={ColorDropScreen}
